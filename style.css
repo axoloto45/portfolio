@@ -139,7 +139,7 @@ body {
 .card-face-back h2 {
   inset: 0;
   margin-top: -10px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   align-self: center;
 }
 
@@ -266,6 +266,10 @@ body {
     gap: 20px;
   }
 
+  .card-face-back h2{
+    margin-bottom: 15px;
+  }
+
   .card-face-back p {
     font-size: 0.8rem;
   }
@@ -284,11 +288,12 @@ body {
   .card-face-front h1 {
     font-size: 32px;
     margin-top: 50px;
+    margin-bottom: -15px;
   }
 
   .card-face-front h2 {
     font-size: 22px;
-    margin-bottom: 110px;
+    margin-bottom: 80px;
   }
 
   .card-face-front {
@@ -300,8 +305,8 @@ body {
   }
 
   .pp {
-    width: 96px;
-    height: 96px;
+    width: 80px;
+    height: 80px;
   }
 
   .card-face-back h2 {
