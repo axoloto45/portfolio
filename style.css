@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  height: 100vh;
+  background: rgb(19, 16, 71);
+  background: linear-gradient(
+    166deg,
+    rgba(19, 16, 71, 1) 0%,
+    rgba(58, 62, 82, 1) 100%
+  );
+}
+
+.card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 600px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card-face-front {
+  background: rgb(184,7,67);
+  background: linear-gradient(337deg, rgba(184,7,67,1) 0%, rgba(35,41,201,1) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card-face-front h1 {
+  font-size: 42px;
+  color: white;
+}
+
+.card-face-front h2 {
+  font-size: 28px;
+  color: white;
+  margin-bottom: 150px;
+  text-align: center;
+}
+
+.toggle-button-front {
+  width: 45px;
+  height: 45px;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card-face-front .toggle-button-front:hover {
+  border: solid white;
+}
+
+.arrow-front {
+  position: absolute;
+  height: 2px;
+  width: 15px;
+  background: black;
+  left: 50%;
+  transform: translateX(-50%);
+  top: auto;
+}
+
+.arrow-front::after {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  transform: rotate(45deg);
+  left: 5px;
+  top: -4px;
+}
+
+.card-face-front .toggle-button-front:hover .arrow-front {
+  background: white;
+}
+
+.card-face-front .toggle-button-front:hover .arrow-front::after {
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.card-face-back {
+  background: rgb(184,7,67);
+  background: linear-gradient(337deg, rgba(184,7,67,1) 0%, rgba(35,41,201,1) 100%);
+  display: flex;
+  flex-direction: column;
+  transform: rotateY(180deg);
+  gap: 30px;
+  color: white;
+}
+
+.pp {
+  margin-top: 20px;
+  display: block;
+  width: 128px;
+  height: 128px;
+  border: 5px solid;
+  border-radius: 50%;
+  background: white;
+  object-fit: cover;
+  align-self: center;
+}
+
+.card-face-back h2 {
+  inset: 0;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.card-face-back p {
+  margin-inline: 10px;
+}
+
+.card-face-back .logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+}
+
+.card-face-back a {
+  text-decoration: none;
+}
+
+.card-face-back .contact-me {
+  align-self: center;
+}
+
+.card-face-back .mail {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border: solid black;
+  border-radius: 2rem;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card-face-back .mail::before {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 0;
+  background: black;
+  border-radius: 50px;
+  overflow: hidden;
+  transition: all 0.2s;
+  z-index: -1;
+}
+
+.card-face-back .mail:hover::before {
+  width: 100%;
+}
+
+.card-face-back .logo {
+  width: 32px;
+  height: 32px;
+}
+
+.card-face-back .toggle-button-back {
+  width: 45px;
+  height: 45px;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 1px;
+}
+
+.card-face-back .toggle-button-back:hover {
+  border: solid white;
+}
+
+.arrow-back {
+  position: absolute;
+  height: 2px;
+  width: 15px;
+  background: black;
+  left: 50%;
+  transform: translateX(-50%);
+  top: auto;
+}
+
+.arrow-back::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  transform: rotate(-135deg);
+  left: 0px;
+  top: -4px;
+}
+
+.card-face-back .toggle-button-back:hover .arrow-back {
+  background: white;
+}
+
+.card-face-back .toggle-button-back:hover .arrow-back::before {
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+}
+
+@media screen and (max-height: 750px), (max-width: 420px) {
+  .card {
+    width: 333px;
+    height: 500px;
+  }
+
+  .card-face-front h1 {
+    margin-top: 50px;
+  }
+
+  .card-face-front h2 {
+    margin-bottom: 75px;
+  }
+
+  .card-face-front h2 {
+    margin-bottom: 160px;
+  }
+
+  .card-face-back {
+    gap: 20px;
+  }
+
+  .card-face-back p {
+    font-size: 0.8rem;
+  }
+
+  .card-face-back .contact-me {
+    margin-bottom: -3px;
+  }
+}
+
+@media screen and (max-height: 650px), (max-width: 360px) {
+  .card {
+    width: 267px;
+    height: 400px;
+  }
+
+  .card-face-front h1 {
+    font-size: 32px;
+    margin-top: 50px;
+  }
+
+  .card-face-front h2 {
+    font-size: 22px;
+    margin-bottom: 110px;
+  }
+
+  .card-face-front {
+    margin-bottom: -10px;
+  }
+
+  .card-face-back {
+    gap: 13px;
+  }
+
+  .pp {
+    width: 96px;
+    height: 96px;
+  }
+
+  .card-face-back h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .card-face-back p {
+    font-size: 0.7rem;
+  }
+
+  .card-face-back .mail {
+    width: 150px;
+    height: 40px;
+  }
+}
